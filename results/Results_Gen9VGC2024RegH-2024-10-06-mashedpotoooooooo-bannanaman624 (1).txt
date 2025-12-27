@@ -1,0 +1,12 @@
+Game Type: doubles
+Tier: [Gen 9] VGC 2024 Reg H
+Players:
+  p1: Mashed Potoooooooo
+  p2: bannanaman624
+Total Turns: 9
+
+Faints
+  p2b: Mandibuzz was fainted by p1a: Slay King
+  p2b: Salazzle was fainted by p1a: Zesty
+  p2b: Galvantula was fainted by p1a: Zesty
+  p2a: Rhyperior was fainted by p1a: Zesty

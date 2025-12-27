@@ -1,0 +1,15 @@
+Game Type: doubles
+Tier: [Gen 9] VGC 2024 Reg H
+Players:
+  p1: Mashed Potoooooooo
+  p2: bannanaman624
+Total Turns: 7
+
+Faints
+  p2b: Salazzle was fainted by p1b: Zesty
+  p2a: Rhyperior was fainted by p1b: Zesty
+  p1a: Pete the Parrot was fainted by p2b: Eelektross
+  p1b: Zesty was fainted by p2b: Eelektross
+  p2b: Eelektross was fainted by p1b: Snail Trail
+  p1b: Snail Trail was fainted by p2a: Excadrill
+  p2a: Excadrill was fainted by p1a: Slay King
