@@ -7,6 +7,7 @@ Total Turns: 9
 
 Faints
   p2b: Mandibuzz was fainted by p1a: Slay King
+  p1a: Slay King was fainted by p2b: Salazzle
   p2b: Salazzle was fainted by p1a: Zesty
   p2b: Galvantula was fainted by p1a: Zesty
   p2a: Rhyperior was fainted by p1a: Zesty

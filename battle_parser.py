@@ -8,10 +8,16 @@ def parse_game_log(file_path):
         'tier': '',
         'players': {},
         'turns': 0,
-        'faints': [],
-        'moves': [],
-        'status_effects': [],
+        'faints': [],   # (victim, killer)
+        'moves': [],    # (attacker, move)
+        'status_effects': [],   # (target, status, source)
     }
+
+    # Track last pokemon that damaged each target pokemon
+    last_damage_source = {}
+
+    # Track the last active move user
+    current_move_user = None
 
     # To track most recent move and its effects
     current_move = {}
@@ -40,20 +46,38 @@ def parse_game_log(file_path):
                 current_move = {'pokemon': pokemon, 'move': move, 'target': target}
                 stats['moves'].append((pokemon, move))
 
+            elif line.startswith('|-damage|'):
+                parts = line.split('|')
+                target = parts[2]
+
+                if '[from]' not in line and current_move:
+                    last_damage_source[target] = pokemon
+
+                elif '[from]' in line and current_move:
+                    for statused_pokemon, status, source in stats['status_effects']:
+                        if statused_pokemon == target:
+                            last_damage_source[target] = source
+
             # Track status effects
             elif line.startswith('|-status|'):
                 parts = line.split('|')
-                target_pokemon, status = parts[1], parts[2]
-                stats['status_effects'].append((target_pokemon, status, current_move.get('pokemon')))
+                target_pokemon, status = parts[2], parts[3]
+                source = last_damage_source.get(target_pokemon, pokemon)
+                stats['status_effects'].append((target_pokemon, status, source))
 
             # Track faints and their cause
             elif line.startswith('|faint|'):
                 parts = line.split('|')
-                player_num, fainted_pokemon = parts[1], parts[2]
-                faint_cause = current_move.get('pokemon', 'unknown')
+                fainted_pokemon = parts[2]
+                faint_cause = last_damage_source.get(fainted_pokemon, 'unknown')
 
                 # Exclude self-inflicted faints
                 if faint_cause and faint_cause != fainted_pokemon:
+                    killer_side = faint_cause.split(':')[0][:2]
+                    victim_side = fainted_pokemon.split(':')[0][:2]
+                    if killer_side == victim_side:
+                        continue
+
                     stats['faints'].append((fainted_pokemon, faint_cause))
 
             #####################################################################################################
