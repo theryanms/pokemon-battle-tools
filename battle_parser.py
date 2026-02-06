@@ -1,6 +1,5 @@
 import os
 
-
 #  Function to parse the game log
 def parse_game_log(file_path):
     stats = {
@@ -11,9 +10,13 @@ def parse_game_log(file_path):
         'faints': [],   # (victim, killer)
         'moves': [],    # (attacker, move)
         'status_effects': [],   # (target, status, source)
+
+        ### MAKE SURE TO CHECK THAT THESE WORK AND EVERYTHING IS HOW YOU NEED IT TO BE
+        'total_damage': [],     # (total damage done by a Pokemon)
+        'field_turns': [],      # (total number of turns on field)
     }
 
-    # Track last pokemon that damaged each target pokemon
+    # Track last Pokémon that damaged each target Pokémon
     last_damage_source = {}
 
     # Track the last active move user
@@ -53,6 +56,8 @@ def parse_game_log(file_path):
                 if '[from]' not in line and current_move:
                     last_damage_source[target] = pokemon
 
+                    ############## Add in functionality to track total damage #################
+
                 elif '[from]' in line and current_move:
                     for statused_pokemon, status, source in stats['status_effects']:
                         if statused_pokemon == target:
@@ -71,7 +76,7 @@ def parse_game_log(file_path):
                 fainted_pokemon = parts[2]
                 faint_cause = last_damage_source.get(fainted_pokemon, 'unknown')
 
-                # Exclude self-inflicted faints
+                # Exclude self and team-inflicted faints
                 if faint_cause and faint_cause != fainted_pokemon:
                     killer_side = faint_cause.split(':')[0][:2]
                     victim_side = fainted_pokemon.split(':')[0][:2]
