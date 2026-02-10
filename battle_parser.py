@@ -1,5 +1,26 @@
 import os
 
+def parse_hp_percent(hp_text):
+    hp_text = hp_text.strip()
+
+    if hp_text.startswith('0 fnt'):
+        return 0.0
+
+    hp_text = hp_text.split(' ')[0]
+    if '/' not in hp_text:
+        return None
+
+    try:
+        current, total = hp_text.split('/')
+        current = current[:-1]
+        current = float(current)
+        total = float(total)
+        if total == 0:
+            return None
+        return current
+    except:
+        return None
+
 #  Function to parse the game log
 def parse_game_log(file_path):
     stats = {
@@ -7,15 +28,16 @@ def parse_game_log(file_path):
         'tier': '',
         'players': {},
         'total_turns': 0,
-        'faints': [],   # (victim, killer)
-        'moves': [],    # (attacker, move)
-        'status_effects': [],   # (target, status, source)
+        'faints': [],  # (victim, killer)
+        'moves': [],  # (attacker, move)
+        'status_effects': [],  # (target, status, source)
+        'last_hp': {},
 
         ### MAKE SURE TO CHECK THAT THESE WORK AND EVERYTHING IS HOW YOU NEED IT TO BE
         'ko_totals': {},
         'faint_totals': {},
-        'total_damage': [],     # (total damage done by a Pokemon)
-        'field_turns': [],      # (total number of turns on field)
+        'total_damage': {},  # (total damage done by a Pokemon)
+        'field_turns': {},  # (total number of turns on field)
     }
 
     # Track last Pokémon that damaged each target Pokémon
@@ -42,6 +64,15 @@ def parse_game_log(file_path):
                 player_num, player_name = parts[2], parts[3]
                 stats['players'][player_num] = player_name
 
+            # Extract current HP (starting total + Regenerator)
+            elif line.startswith('|switch|'):
+                parts = line.split('|')
+                if len(parts) >= 5:
+                    pokemon, hp_text = parts[2], parts[4]
+                    hp_percent = parse_hp_percent(hp_text)
+                    if hp_percent is not None:
+                        stats['last_hp'][pokemon] = hp_percent
+
             # Track moves used and store who is doing what
             elif line.startswith('|move|'):
                 parts = line.split('|')
@@ -52,12 +83,34 @@ def parse_game_log(file_path):
             elif line.startswith('|-damage|'):
                 parts = line.split('|')
                 target = parts[2]
+                hp_text = parts[3]
 
+                # Parsing for new hp total
+                new_hp = parse_hp_percent(hp_text)
+
+                # Retrieving previous hp total
+                old_hp = stats['last_hp'].get(target)
+
+                # Updating last_hp if valid value
+                if new_hp is not None:
+                    stats['last_hp'][target] = new_hp
+
+                if new_hp is None or old_hp is None:
+                    continue
+
+                damage_delta = old_hp - new_hp
+                if damage_delta <= 0:
+                    continue
+
+                # Damage taken from a valid attack move
                 if '[from]' not in line and current_move:
+                    stats['total_damage'][pokemon] = stats['total_damage'].get(pokemon, 0) + damage_delta
+
+                    ### CAN PROBABLY TRACK TOTAL DAMAGE TAKEN THEN???
+
                     last_damage_source[target] = pokemon
 
-                    ############## Add in functionality to track total damage #################
-
+                # Damage taken from a status effect
                 elif '[from]' in line and current_move:
                     for statused_pokemon, status, source in stats['status_effects']:
                         if statused_pokemon == target:
@@ -93,7 +146,6 @@ def parse_game_log(file_path):
 
     return stats
 
-
 def save_results(stats, output_folder, file_name):
     # Create the file path
     output_path = os.path.join(output_folder, file_name)
@@ -114,6 +166,12 @@ def save_results(stats, output_folder, file_name):
         f.write(f"\nFaint Totals\n")
         for pokemon, faints in sorted(stats['faint_totals'].items(), key=lambda x: (-x[1], x[0].lower())):
             f.write(f"    {pokemon}: {faints}\n")
+
+        f.write(f"\nDamage Dealt (approx %)\n")
+        for pokemon, damage in sorted(stats['total_damage'].items(), key=lambda x: (-x[1], x[0].lower())):
+            f.write(f"    {pokemon}: {int(damage)}\n")
+
+        ### DAMAGE TAKEN / or HEALED?!?!?!
 
         # Write faints with the attacker who caused it
         f.write("\nFaints\n")

@@ -18,6 +18,13 @@ Faint Totals
     p2b: Excadrill: 1
     p2b: Rhyperior: 1
 
+Damage Dealt (approx %)
+    p1a: Slay King: 222
+    p2b: Eelektross: 128
+    p1a: Snail Trail: 103
+    p2a: Rhyperior: 45
+    p1b: Zesty: 24
+
 Faints
   p2b: Excadrill was fainted by p1a: Slay King
   p1a: Slay King was fainted by p2b: Eelektross

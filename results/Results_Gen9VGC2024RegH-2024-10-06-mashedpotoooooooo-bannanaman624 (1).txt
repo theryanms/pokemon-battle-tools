@@ -17,6 +17,11 @@ Faint Totals
     p2b: Mandibuzz: 1
     p2b: Salazzle: 1
 
+Damage Dealt (approx %)
+    p1a: Slay King: 229
+    p1a: Zesty: 183
+    p2a: Rhyperior: 110
+
 Faints
   p2b: Mandibuzz was fainted by p1a: Slay King
   p1a: Slay King was fainted by p2b: Salazzle

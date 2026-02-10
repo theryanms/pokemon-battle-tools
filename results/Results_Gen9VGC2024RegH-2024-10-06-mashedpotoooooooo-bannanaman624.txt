@@ -22,6 +22,16 @@ Faint Totals
     p2b: Eelektross: 1
     p2b: Salazzle: 1
 
+Damage Dealt (approx %)
+    p1b: Zesty: 138
+    p1b: Slay King: 123
+    p2a: Excadrill: 115
+    p2b: Eelektross: 93
+    p1b: Snail Trail: 71
+    p1a: Slay King: 56
+    p2b: Salazzle: 52
+    p2a: Rhyperior: 9
+
 Faints
   p2b: Salazzle was fainted by p1b: Zesty
   p2a: Rhyperior was fainted by p1b: Zesty
