@@ -5,6 +5,18 @@ Players:
   p2: bannanaman624
 Total Turns: 9
 
+KO Totals
+    p1a: Zesty: 3
+    p1a: Slay King: 1
+    p2b: Salazzle: 1
+
+Faint Totals
+    p1a: Slay King: 1
+    p2a: Rhyperior: 1
+    p2b: Galvantula: 1
+    p2b: Mandibuzz: 1
+    p2b: Salazzle: 1
+
 Faints
   p2b: Mandibuzz was fainted by p1a: Slay King
   p1a: Slay King was fainted by p2b: Salazzle

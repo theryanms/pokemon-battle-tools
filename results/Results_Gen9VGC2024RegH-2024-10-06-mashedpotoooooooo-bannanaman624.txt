@@ -5,6 +5,23 @@ Players:
   p2: bannanaman624
 Total Turns: 7
 
+KO Totals
+    p1b: Zesty: 2
+    p1a: Slay King: 1
+    p1b: Snail Trail: 1
+    p2a: Excadrill: 1
+    p2b: Eelektross: 1
+    p2b: Salazzle: 1
+
+Faint Totals
+    p1a: Pete the Parrot: 1
+    p1b: Snail Trail: 1
+    p1b: Zesty: 1
+    p2a: Excadrill: 1
+    p2a: Rhyperior: 1
+    p2b: Eelektross: 1
+    p2b: Salazzle: 1
+
 Faints
   p2b: Salazzle was fainted by p1b: Zesty
   p2a: Rhyperior was fainted by p1b: Zesty

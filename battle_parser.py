@@ -6,12 +6,14 @@ def parse_game_log(file_path):
         'game_type': '',
         'tier': '',
         'players': {},
-        'turns': 0,
+        'total_turns': 0,
         'faints': [],   # (victim, killer)
         'moves': [],    # (attacker, move)
         'status_effects': [],   # (target, status, source)
 
         ### MAKE SURE TO CHECK THAT THESE WORK AND EVERYTHING IS HOW YOU NEED IT TO BE
+        'ko_totals': {},
+        'faint_totals': {},
         'total_damage': [],     # (total damage done by a Pokemon)
         'field_turns': [],      # (total number of turns on field)
     }
@@ -39,8 +41,6 @@ def parse_game_log(file_path):
                 parts = line.split('|')
                 player_num, player_name = parts[2], parts[3]
                 stats['players'][player_num] = player_name
-
-            #####################################################################################################
 
             # Track moves used and store who is doing what
             elif line.startswith('|move|'):
@@ -84,12 +84,12 @@ def parse_game_log(file_path):
                         continue
 
                     stats['faints'].append((fainted_pokemon, faint_cause))
-
-            #####################################################################################################
+                    stats['ko_totals'][faint_cause] = stats['ko_totals'].get(faint_cause, 0) + 1
+                    stats['faint_totals'][fainted_pokemon] = stats['faint_totals'].get(fainted_pokemon, 0) + 1
 
             # Track turns
             elif line.startswith('|turn|'):
-                stats['turns'] += 1
+                stats['total_turns'] += 1
 
     return stats
 
@@ -106,7 +106,14 @@ def save_results(stats, output_folder, file_name):
         f.write(f"Players:\n")
         for player_num, player_name in stats['players'].items():
             f.write(f"  {player_num}: {player_name}\n")
-        f.write(f"Total Turns: {stats['turns']}\n")
+        f.write(f"Total Turns: {stats['total_turns']}\n")
+        f.write(f"\nKO Totals\n")
+        for pokemon, kos in sorted(stats['ko_totals'].items(), key=lambda x: (-x[1], x[0].lower())):
+            f.write(f"    {pokemon}: {kos}\n")
+
+        f.write(f"\nFaint Totals\n")
+        for pokemon, faints in sorted(stats['faint_totals'].items(), key=lambda x: (-x[1], x[0].lower())):
+            f.write(f"    {pokemon}: {faints}\n")
 
         # Write faints with the attacker who caused it
         f.write("\nFaints\n")
