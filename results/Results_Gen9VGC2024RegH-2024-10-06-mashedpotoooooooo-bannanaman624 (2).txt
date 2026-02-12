@@ -6,28 +6,28 @@ Players:
 Total Turns: 5
 
 KO Totals
-    p1a: Snail Trail: 2
-    p1a: Slay King: 1
-    p1b: Zesty: 1
-    p2b: Eelektross: 1
+    p1:Snail Trail: 2
+    p1:Slay King: 1
+    p1:Zesty: 1
+    p2:Eelektross: 1
 
 Faint Totals
-    p1a: Slay King: 1
-    p2a: Salazzle: 1
-    p2b: Eelektross: 1
-    p2b: Excadrill: 1
-    p2b: Rhyperior: 1
+    p1:Slay King: 1
+    p2:Eelektross: 1
+    p2:Excadrill: 1
+    p2:Rhyperior: 1
+    p2:Salazzle: 1
 
 Damage Dealt (approx %)
-    p1a: Slay King: 222
-    p2b: Eelektross: 128
-    p1a: Snail Trail: 103
-    p2a: Rhyperior: 45
-    p1b: Zesty: 24
+    p1:Slay King: 222
+    p2:Eelektross: 128
+    p1:Snail Trail: 103
+    p2:Rhyperior: 45
+    p1:Zesty: 24
 
 Faints
-  p2b: Excadrill was fainted by p1a: Slay King
-  p1a: Slay King was fainted by p2b: Eelektross
-  p2b: Eelektross was fainted by p1a: Snail Trail
-  p2a: Salazzle was fainted by p1a: Snail Trail
-  p2b: Rhyperior was fainted by p1b: Zesty
+  p2:Excadrill was fainted by p1:Slay King
+  p1:Slay King was fainted by p2:Eelektross
+  p2:Eelektross was fainted by p1:Snail Trail
+  p2:Salazzle was fainted by p1:Snail Trail
+  p2:Rhyperior was fainted by p1:Zesty

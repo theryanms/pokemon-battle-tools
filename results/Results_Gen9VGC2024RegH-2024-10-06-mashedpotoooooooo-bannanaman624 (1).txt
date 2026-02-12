@@ -6,25 +6,28 @@ Players:
 Total Turns: 9
 
 KO Totals
-    p1a: Zesty: 3
-    p1a: Slay King: 1
-    p2b: Salazzle: 1
+    p1:Zesty: 3
+    p1:Slay King: 1
+    p2:Salazzle: 1
 
 Faint Totals
-    p1a: Slay King: 1
-    p2a: Rhyperior: 1
-    p2b: Galvantula: 1
-    p2b: Mandibuzz: 1
-    p2b: Salazzle: 1
+    p1:Slay King: 1
+    p2:Galvantula: 1
+    p2:Mandibuzz: 1
+    p2:Rhyperior: 1
+    p2:Salazzle: 1
 
 Damage Dealt (approx %)
-    p1a: Slay King: 229
-    p1a: Zesty: 183
-    p2a: Rhyperior: 110
+    p1:Slay King: 239
+    p1:Zesty: 195
+    p2:Rhyperior: 120
+    p2:Salazzle: 59
+    p1:Steve: 11
+    p1:Jack Black: 2
 
 Faints
-  p2b: Mandibuzz was fainted by p1a: Slay King
-  p1a: Slay King was fainted by p2b: Salazzle
-  p2b: Salazzle was fainted by p1a: Zesty
-  p2b: Galvantula was fainted by p1a: Zesty
-  p2a: Rhyperior was fainted by p1a: Zesty
+  p2:Mandibuzz was fainted by p1:Slay King
+  p1:Slay King was fainted by p2:Salazzle
+  p2:Salazzle was fainted by p1:Zesty
+  p2:Galvantula was fainted by p1:Zesty
+  p2:Rhyperior was fainted by p1:Zesty

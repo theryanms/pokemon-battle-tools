@@ -6,37 +6,37 @@ Players:
 Total Turns: 7
 
 KO Totals
-    p1b: Zesty: 2
-    p1a: Slay King: 1
-    p1b: Snail Trail: 1
-    p2a: Excadrill: 1
-    p2b: Eelektross: 1
-    p2b: Salazzle: 1
+    p1:Zesty: 2
+    p1:Slay King: 1
+    p1:Snail Trail: 1
+    p2:Eelektross: 1
+    p2:Excadrill: 1
+    p2:Salazzle: 1
 
 Faint Totals
-    p1a: Pete the Parrot: 1
-    p1b: Snail Trail: 1
-    p1b: Zesty: 1
-    p2a: Excadrill: 1
-    p2a: Rhyperior: 1
-    p2b: Eelektross: 1
-    p2b: Salazzle: 1
+    p1:Pete the Parrot: 1
+    p1:Snail Trail: 1
+    p1:Zesty: 1
+    p2:Eelektross: 1
+    p2:Excadrill: 1
+    p2:Rhyperior: 1
+    p2:Salazzle: 1
 
 Damage Dealt (approx %)
-    p1b: Zesty: 138
-    p1b: Slay King: 123
-    p2a: Excadrill: 115
-    p2b: Eelektross: 93
-    p1b: Snail Trail: 71
-    p1a: Slay King: 56
-    p2b: Salazzle: 52
-    p2a: Rhyperior: 9
+    p1:Slay King: 179
+    p1:Zesty: 156
+    p2:Salazzle: 141
+    p2:Excadrill: 115
+    p2:Eelektross: 93
+    p1:Snail Trail: 71
+    p1:Pete the Parrot: 12
+    p2:Rhyperior: 9
 
 Faints
-  p2b: Salazzle was fainted by p1b: Zesty
-  p2a: Rhyperior was fainted by p1b: Zesty
-  p1a: Pete the Parrot was fainted by p2b: Eelektross
-  p1b: Zesty was fainted by p2b: Salazzle
-  p2b: Eelektross was fainted by p1b: Snail Trail
-  p1b: Snail Trail was fainted by p2a: Excadrill
-  p2a: Excadrill was fainted by p1a: Slay King
+  p2:Salazzle was fainted by p1:Zesty
+  p2:Rhyperior was fainted by p1:Zesty
+  p1:Pete the Parrot was fainted by p2:Eelektross
+  p1:Zesty was fainted by p2:Salazzle
+  p2:Eelektross was fainted by p1:Snail Trail
+  p1:Snail Trail was fainted by p2:Excadrill
+  p2:Excadrill was fainted by p1:Slay King
