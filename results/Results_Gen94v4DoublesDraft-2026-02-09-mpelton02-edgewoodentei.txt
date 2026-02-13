@@ -1,0 +1,64 @@
+Game Type: doubles
+Tier: [Gen 9] 4v4 Doubles Draft
+Players:
+  p1: MPelton02
+  p2: EdgewoodEntei
+
+Total Turns: 6
+
+Pokemon Brought:
+  ('p1:BM', 238.0)
+  ('p1:Butter', 207.0)
+  ('p1:Cinco de mayo', 0.0)
+  ('p1:Dark dragoon', 0.0)
+  ('p2:Blaziken', 0.0)
+  ('p2:Ditto', 0.0)
+  ('p2:Greninja', 0.0)
+  ('p2:Rayquaza', 0.0)
+
+Turns on Field
+    p2:Rayquaza: 2
+    p1:BM: 1
+    p1:Butter: 1
+    p1:Cinco de mayo: 1
+    p1:Dark dragoon: 1
+    p2:Blaziken: 1
+    p2:Ditto: 1
+    p2:Greninja: 1
+
+KO Totals
+    p1:BM: 2
+    p1:Dark dragoon: 1
+    p2:Blaziken: 1
+    p2:Greninja: 1
+
+Faint Totals
+    p1:Cinco de mayo: 1
+    p1:Dark dragoon: 1
+    p2:Blaziken: 1
+    p2:Greninja: 1
+    p2:Rayquaza: 1
+
+Damage Dealt (approx %)
+    p1:BM: 259
+    p2:Greninja: 186
+    p2:Rayquaza: 153
+    p1:Dark dragoon: 125
+    p2:Blaziken: 48
+    p2:Ditto: 21
+
+Damage Taken (approx %)
+    p1:Cinco de mayo: 201
+    p1:Dark dragoon: 132
+    p2:Blaziken: 100
+    p2:Ditto: 100
+    p2:Greninja: 100
+    p2:Rayquaza: 90
+    p1:BM: 69
+
+Faints
+  p1:Dark dragoon was fainted by p2:Greninja
+  p2:Greninja was fainted by p1:Dark dragoon
+  p1:Cinco de mayo was fainted by p2:Blaziken
+  p2:Rayquaza was fainted by p1:BM
+  p2:Blaziken was fainted by p1:BM

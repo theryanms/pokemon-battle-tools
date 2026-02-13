@@ -49,11 +49,17 @@ def parse_game_log(file_path):
         'ko_totals': {},
         'faint_totals': {},
         'total_damage': {},  # (total damage done by a Pokemon)
+        'damage_taken': {},  # (total damage TAKEN by a pokemon)
         'field_turns': {},  # (total number of turns on field)
+
+        'active_slots': {'p1a': None, 'p1b': None, 'p2a': None, 'p2b': None},
     }
 
     # Track last Pokémon that damaged each target Pokémon
     last_damage_source = {}
+
+    # Names already counted for FIELD turns this turn
+    field_seen_this_turn = set()
 
     # Track the last active move user
     current_move_user = None
@@ -63,6 +69,8 @@ def parse_game_log(file_path):
     with open(file_path, 'r') as file:
         for line in file:
             line = line.strip()
+
+            # IF STATEMENT FOR ALL THE LINES TO SKIP (J / | / Super Effective / etc...)
 
             # Extract game type and tier
             if line.startswith('|gametype|'):
@@ -86,6 +94,9 @@ def parse_game_log(file_path):
                     hp_percent = parse_hp_percent(hp_text)
                     if hp_percent is not None:
                         stats['last_hp'][pokemon] = hp_percent
+                    if pokemon not in field_seen_this_turn:
+                        stats['field_turns'][pokemon] = stats['field_turns'].get(pokemon, 0) + 1
+                        field_seen_this_turn.add(pokemon)
 
             # Track moves used and store who is doing what
             elif line.startswith('|move|'):
@@ -105,6 +116,9 @@ def parse_game_log(file_path):
                 new_hp = parse_hp_percent(hp_text)
 
                 ####### DO SOME HEALING CALCS HERE?!?!?!? #####
+                # old_hp = stats['last_hp'].get(pokemon)
+                # delta to new hp
+                # add to total healing received / given
 
                 if new_hp is not None:
                     stats['last_hp'][pokemon] = new_hp
@@ -132,7 +146,7 @@ def parse_game_log(file_path):
                 if '[from]' not in line:
                     stats['total_damage'][pokemon] = stats['total_damage'].get(pokemon, 0) + damage_delta
 
-                    ### CAN PROBABLY TRACK TOTAL DAMAGE TAKEN THEN???
+                    stats['damage_taken'][target] = stats['damage_taken'].get(target, 0) + damage_delta
 
                     last_damage_source[target] = pokemon
 
@@ -142,7 +156,7 @@ def parse_game_log(file_path):
                         if statused_pokemon == target:
                             stats['total_damage'][source] = stats['total_damage'].get(source, 0) + damage_delta
 
-                            ### TOTAL DAMAGE TAKEN HERE
+                            stats['damage_taken'][target] = stats['damage_taken'].get(target, 0) + damage_delta
 
                             last_damage_source[target] = source
 
@@ -175,6 +189,17 @@ def parse_game_log(file_path):
             elif line.startswith('|turn|'):
                 stats['game_turns'] += 1
 
+                # THIS SHIt IS FUCKED AND NEEDS TO BE REDONE
+                # new turn, reset who we have seen
+                field_seen_this_turn = set()
+                #
+                for name in field_seen_this_turn:
+                    print(name)
+
+                    if name not in field_seen_this_turn:
+                        stats['field_turns'][name] = stats['field_turns'].get(name, 0) + 1
+                        field_seen_this_turn.add(name)
+
     return stats
 
 def save_results(stats, output_folder, file_name):
@@ -189,7 +214,18 @@ def save_results(stats, output_folder, file_name):
         f.write(f"Players:\n")
         for player_num, player_name in stats['players'].items():
             f.write(f"  {player_num}: {player_name}\n")
-        f.write(f"Total Turns: {stats['game_turns']}\n")
+
+        f.write(f"\nTotal Turns: {stats['game_turns']}\n")
+
+        ### Pokemon Brought using LAST HP in stats. Will be a value if they appeared in match
+        f.write(f"\nPokemon Brought:\n")
+        for pokemon in sorted(stats['last_hp'].items(), key=lambda x: (x[0].lower())):
+            f.write(f"  {pokemon}\n")
+
+        f.write(f"\nTurns on Field\n")
+        for pokemon, turns in sorted(stats['field_turns'].items(), key=lambda x: (-x[1], x[0].lower())):
+            f.write(f"    {pokemon}: {turns}\n")
+
         f.write(f"\nKO Totals\n")
         for pokemon, kos in sorted(stats['ko_totals'].items(), key=lambda x: (-x[1], x[0].lower())):
             f.write(f"    {pokemon}: {kos}\n")
@@ -202,7 +238,11 @@ def save_results(stats, output_folder, file_name):
         for pokemon, damage in sorted(stats['total_damage'].items(), key=lambda x: (-x[1], x[0].lower())):
             f.write(f"    {pokemon}: {int(damage)}\n")
 
-        ### DAMAGE TAKEN / or HEALED?!?!?!
+        f.write(f"\nDamage Taken (approx %)\n")
+        for pokemon, damage in sorted(stats['damage_taken'].items(), key=lambda x: (-x[1], x[0].lower())):
+            f.write(f"    {pokemon}: {int(damage)}\n")
+
+        ### DAMAGE HEALED?!?!?!
 
         # Write faints with the attacker who caused it
         f.write("\nFaints\n")

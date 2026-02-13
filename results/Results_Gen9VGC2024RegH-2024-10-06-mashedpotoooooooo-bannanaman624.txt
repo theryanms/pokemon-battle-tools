@@ -3,7 +3,28 @@ Tier: [Gen 9] VGC 2024 Reg H
 Players:
   p1: Mashed Potoooooooo
   p2: bannanaman624
+
 Total Turns: 7
+
+Pokemon Brought:
+  ('p1:Pete the Parrot', 0.0)
+  ('p1:Slay King', 62.0)
+  ('p1:Snail Trail', 0.0)
+  ('p1:Zesty', 0.0)
+  ('p2:Eelektross', 0.0)
+  ('p2:Excadrill', 0.0)
+  ('p2:Rhyperior', 0.0)
+  ('p2:Salazzle', 0.0)
+
+Turns on Field
+    p1:Slay King: 2
+    p1:Pete the Parrot: 1
+    p1:Snail Trail: 1
+    p1:Zesty: 1
+    p2:Eelektross: 1
+    p2:Excadrill: 1
+    p2:Rhyperior: 1
+    p2:Salazzle: 1
 
 KO Totals
     p1:Zesty: 2
@@ -31,6 +52,16 @@ Damage Dealt (approx %)
     p1:Snail Trail: 71
     p1:Pete the Parrot: 12
     p2:Rhyperior: 9
+
+Damage Taken (approx %)
+    p2:Rhyperior: 118
+    p1:Pete the Parrot: 100
+    p1:Snail Trail: 100
+    p1:Zesty: 100
+    p2:Eelektross: 100
+    p2:Excadrill: 100
+    p2:Salazzle: 100
+    p1:Slay King: 58
 
 Faints
   p2:Salazzle was fainted by p1:Zesty

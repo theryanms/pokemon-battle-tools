@@ -1,0 +1,69 @@
+Game Type: doubles
+Tier: [Gen 9] 4v4 Doubles Draft
+Players:
+  p1: MPelton02
+  p2: EdgewoodEntei
+
+Total Turns: 5
+
+Pokemon Brought:
+  ('p1:Butter', 123.0)
+  ('p1:Cinco de mayo', 201.0)
+  ('p1:Legolas', 0.0)
+  ('p1:Unk', 0.0)
+  ('p2:Ditto', 0.0)
+  ('p2:Greninja', 0.0)
+  ('p2:Mew', 0.0)
+  ('p2:Rayquaza', 0.0)
+
+Turns on Field
+    p1:Butter: 1
+    p1:Cinco de mayo: 1
+    p1:Legolas: 1
+    p1:Unk: 1
+    p2:Ditto: 1
+    p2:Greninja: 1
+    p2:Mew: 1
+    p2:Rayquaza: 1
+
+KO Totals
+    p2:Rayquaza: 2
+    p1:Butter: 1
+    p1:Cinco de mayo: 1
+    p1:Legolas: 1
+    p1:Unk: 1
+
+Faint Totals
+    p1:Legolas: 1
+    p1:Unk: 1
+    p2:Ditto: 1
+    p2:Greninja: 1
+    p2:Mew: 1
+    p2:Rayquaza: 1
+
+Damage Dealt (approx %)
+    p2:Rayquaza: 172
+    p2:Greninja: 142
+    p1:Legolas: 100
+    p1:Unk: 100
+    p2:Ditto: 93
+    p1:Cinco de mayo: 80
+    p1:Butter: 63
+    p2:Mew: 30
+
+Damage Taken (approx %)
+    p1:Unk: 195
+    p1:Legolas: 175
+    p2:Ditto: 100
+    p2:Greninja: 100
+    p2:Mew: 100
+    p2:Rayquaza: 80
+    p1:Butter: 30
+
+Faints
+  p2:Greninja was fainted by p1:Legolas
+  p2:Ditto was fainted by p1:Unk
+  p1:Unk was fainted by p2:Rayquaza
+  p1:Legolas was fainted by p2:Rayquaza
+  p2:Rayquaza was fainted by p1:Cinco de mayo
+  p2:Mew was fainted by p1:Butter

@@ -3,7 +3,28 @@ Tier: [Gen 9] VGC 2024 Reg H
 Players:
   p1: Mashed Potoooooooo
   p2: 
+
 Total Turns: 5
+
+Pokemon Brought:
+  ('p1:Slay King', 0.0)
+  ('p1:Snail Trail', 90.0)
+  ('p1:Steve', 100.0)
+  ('p1:Zesty', 77.0)
+  ('p2:Eelektross', 0.0)
+  ('p2:Excadrill', 0.0)
+  ('p2:Rhyperior', 0.0)
+  ('p2:Salazzle', 0.0)
+
+Turns on Field
+    p2:Rhyperior: 2
+    p1:Slay King: 1
+    p1:Snail Trail: 1
+    p1:Steve: 1
+    p1:Zesty: 1
+    p2:Eelektross: 1
+    p2:Excadrill: 1
+    p2:Salazzle: 1
 
 KO Totals
     p1:Snail Trail: 2
@@ -24,6 +45,15 @@ Damage Dealt (approx %)
     p1:Snail Trail: 103
     p2:Rhyperior: 45
     p1:Zesty: 24
+
+Damage Taken (approx %)
+    p2:Rhyperior: 112
+    p2:Eelektross: 100
+    p2:Excadrill: 100
+    p2:Salazzle: 100
+    p1:Slay King: 77
+    p1:Zesty: 23
+    p1:Snail Trail: 10
 
 Faints
   p2:Excadrill was fainted by p1:Slay King

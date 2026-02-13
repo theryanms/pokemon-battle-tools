@@ -3,7 +3,28 @@ Tier: [Gen 9] VGC 2024 Reg H
 Players:
   p1: Mashed Potoooooooo
   p2: bannanaman624
+
 Total Turns: 9
+
+Pokemon Brought:
+  ('p1:Jack Black', 95.0)
+  ('p1:Slay King', 0.0)
+  ('p1:Steve', 88.0)
+  ('p1:Zesty', 60.0)
+  ('p2:Galvantula', 0.0)
+  ('p2:Mandibuzz', 0.0)
+  ('p2:Rhyperior', 0.0)
+  ('p2:Salazzle', 0.0)
+
+Turns on Field
+    p1:Steve: 2
+    p2:Salazzle: 2
+    p1:Jack Black: 1
+    p1:Slay King: 1
+    p1:Zesty: 1
+    p2:Galvantula: 1
+    p2:Mandibuzz: 1
+    p2:Rhyperior: 1
 
 KO Totals
     p1:Zesty: 3
@@ -24,6 +45,16 @@ Damage Dealt (approx %)
     p2:Salazzle: 59
     p1:Steve: 11
     p1:Jack Black: 2
+
+Damage Taken (approx %)
+    p2:Rhyperior: 147
+    p1:Slay King: 104
+    p2:Galvantula: 100
+    p2:Mandibuzz: 100
+    p2:Salazzle: 100
+    p1:Zesty: 40
+    p1:Steve: 30
+    p1:Jack Black: 5
 
 Faints
   p2:Mandibuzz was fainted by p1:Slay King
