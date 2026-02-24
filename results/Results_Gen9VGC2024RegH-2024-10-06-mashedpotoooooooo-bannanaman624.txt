@@ -4,6 +4,8 @@ Players:
   p1: Mashed Potoooooooo
   p2: bannanaman624
 
+Winner: Mashed Potoooooooo
+
 Total Turns: 7
 
 Pokemon Brought:
@@ -15,6 +17,8 @@ Pokemon Brought:
   ('p2:Excadrill', 0.0)
   ('p2:Rhyperior', 0.0)
   ('p2:Salazzle', 0.0)
+
+Pokemon Terastallized:
 
 Turns on Field
     p1:Slay King: 2

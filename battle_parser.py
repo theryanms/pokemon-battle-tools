@@ -1,5 +1,6 @@
 import os
 
+
 # Parses the html battle name and removes the slot character, allowing to keep team designation
 def get_name_only(battle_name):
     if ':' not in battle_name:
@@ -10,6 +11,7 @@ def get_name_only(battle_name):
     name = team + ':' + name
 
     return name
+
 
 # Parses hp text to extract the current total
 def parse_hp_percent(hp_text):
@@ -33,24 +35,25 @@ def parse_hp_percent(hp_text):
     except:
         return None
 
+
 #  Function to parse the game log
 def parse_game_log(file_path):
     stats = {
         'game_type': '',
         'tier': '',
         'players': {},
+        'winner': '',
         'game_turns': 0,
         'faints': [],  # (victim, killer)
         'moves': [],  # (attacker, move)
         'status_effects': [],  # (target, status, source)
         'last_hp': {},
-
-        ### MAKE SURE TO CHECK THAT THESE WORK AND EVERYTHING IS HOW YOU NEED IT TO BE
         'ko_totals': {},
         'faint_totals': {},
         'total_damage': {},  # (total damage done by a Pokemon)
         'damage_taken': {},  # (total damage TAKEN by a pokemon)
         'field_turns': {},  # (total number of turns on field)
+        'terastallized': [],
 
         'active_slots': {'p1a': None, 'p1b': None, 'p2a': None, 'p2b': None},
     }
@@ -66,14 +69,16 @@ def parse_game_log(file_path):
 
     # To track most recent move and its effects
     current_move = {}
-    with open(file_path, 'r') as file:
+    with (open(file_path, 'r')) as file:
         for line in file:
             line = line.strip()
 
-            # IF STATEMENT FOR ALL THE LINES TO SKIP (J / | / Super Effective / etc...)
+            if line.startswith('|t:|' or '|rule|' or '|j|' or '|-boost|' or '|-unboost|' or '|-immune|'
+                               or '|-supereffective|' or '|-resisted|' or '|-activate|' or '-singleturn|'):
+                continue
 
             # Extract game type and tier
-            if line.startswith('|gametype|'):
+            elif line.startswith('|gametype|'):
                 stats['game_type'] = line.split('|')[2]
 
             elif line.startswith('|tier|'):
@@ -185,6 +190,17 @@ def parse_game_log(file_path):
                     stats['ko_totals'][faint_cause] = stats['ko_totals'].get(faint_cause, 0) + 1
                     stats['faint_totals'][fainted_pokemon] = stats['faint_totals'].get(fainted_pokemon, 0) + 1
 
+            elif line.startswith('|-terastallize|'):
+                parts = line.split('|')
+                tera_pokemon = parts[2]
+                tera_pokemon = get_name_only(tera_pokemon)
+                tera_type = parts[3]
+                stats['terastallized'].append((tera_pokemon, tera_type))
+
+            elif line.startswith('|win|'):
+                parts = line.split('|')
+                stats['winner'] = parts[2]
+
             # Track turns
             elif line.startswith('|turn|'):
                 stats['game_turns'] += 1
@@ -202,6 +218,7 @@ def parse_game_log(file_path):
 
     return stats
 
+
 def save_results(stats, output_folder, file_name):
     # Create the file path
     output_path = os.path.join(output_folder, file_name)
@@ -215,12 +232,18 @@ def save_results(stats, output_folder, file_name):
         for player_num, player_name in stats['players'].items():
             f.write(f"  {player_num}: {player_name}\n")
 
+        f.write(f"\nWinner: {stats['winner']}\n")
+
         f.write(f"\nTotal Turns: {stats['game_turns']}\n")
 
         ### Pokemon Brought using LAST HP in stats. Will be a value if they appeared in match
         f.write(f"\nPokemon Brought:\n")
         for pokemon in sorted(stats['last_hp'].items(), key=lambda x: (x[0].lower())):
             f.write(f"  {pokemon}\n")
+
+        f.write(f"\nPokemon Terastallized:\n")
+        for pokemon, tera_type in stats['terastallized']:
+            f.write(f"  {pokemon}: {tera_type}\n")
 
         f.write(f"\nTurns on Field\n")
         for pokemon, turns in sorted(stats['field_turns'].items(), key=lambda x: (-x[1], x[0].lower())):
@@ -260,6 +283,8 @@ def process_all_logs(input_folder, output_folder):
         if file_name.endswith(".html"):
             file_path = os.path.join(input_folder, file_name)
             print(f"Processing {file_name}...")
+
+            game_stats = set()
 
             # Parse the game log
             game_stats = parse_game_log(file_path)

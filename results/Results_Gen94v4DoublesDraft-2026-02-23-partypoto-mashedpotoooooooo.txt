@@ -1,0 +1,60 @@
+Game Type: doubles
+Tier: [Gen 9] 4v4 Doubles Draft
+Players:
+  p1: party poto
+  p2: Mashed Potoooooooo
+
+Winner: party poto
+
+Total Turns: 4
+
+Pokemon Brought:
+  ('p1:Charles Swab', 0.0)
+  ('p1:Grimmothy Snarlson', 100.0)
+  ('p1:Gucci Mane', 100.0)
+  ('p2:Charles Swab', 0.0)
+  ('p2:Galladiator', 0.0)
+  ('p2:Grimmothy Snarlson', 0.0)
+  ('p2:MimikUwU', 0.0)
+
+Pokemon Terastallized:
+
+Turns on Field
+    p1:Charles Swab: 1
+    p1:Grimmothy Snarlson: 1
+    p1:Gucci Mane: 1
+    p2:Charles Swab: 1
+    p2:Galladiator: 1
+    p2:Grimmothy Snarlson: 1
+    p2:MimikUwU: 1
+
+KO Totals
+    p1:Gucci Mane: 4
+    p2:MimikUwU: 1
+
+Faint Totals
+    p1:Charles Swab: 1
+    p2:Charles Swab: 1
+    p2:Galladiator: 1
+    p2:Grimmothy Snarlson: 1
+    p2:MimikUwU: 1
+
+Damage Dealt (approx %)
+    p1:Gucci Mane: 306
+    p1:Charles Swab: 82
+    p2:MimikUwU: 60
+    p2:Charles Swab: 40
+
+Damage Taken (approx %)
+    p1:Charles Swab: 100
+    p2:Charles Swab: 100
+    p2:Galladiator: 100
+    p2:Grimmothy Snarlson: 100
+    p2:MimikUwU: 88
+
+Faints
+  p2:Galladiator was fainted by p1:Gucci Mane
+  p2:Grimmothy Snarlson was fainted by p1:Gucci Mane
+  p1:Charles Swab was fainted by p2:MimikUwU
+  p2:Charles Swab was fainted by p1:Gucci Mane
+  p2:MimikUwU was fainted by p1:Gucci Mane

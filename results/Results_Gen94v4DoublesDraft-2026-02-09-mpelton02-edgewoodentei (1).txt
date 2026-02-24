@@ -4,6 +4,8 @@ Players:
   p1: MPelton02
   p2: EdgewoodEntei
 
+Winner: MPelton02
+
 Total Turns: 5
 
 Pokemon Brought:
@@ -15,6 +17,9 @@ Pokemon Brought:
   ('p2:Greninja', 0.0)
   ('p2:Mew', 0.0)
   ('p2:Rayquaza', 0.0)
+
+Pokemon Terastallized:
+  p2:Ditto: Ghost
 
 Turns on Field
     p1:Butter: 1
