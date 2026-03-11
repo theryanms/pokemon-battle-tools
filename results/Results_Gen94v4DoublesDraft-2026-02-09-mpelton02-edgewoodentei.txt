@@ -9,8 +9,8 @@ Winner: MPelton02
 Total Turns: 6
 
 Pokemon Brought:
-  ('p1:BM', 238.0)
-  ('p1:Butter', 207.0)
+  ('p1:BM', 96.36)
+  ('p1:Butter', 100.0)
   ('p1:Cinco de mayo', 0.0)
   ('p1:Dark dragoon', 0.0)
   ('p2:Blaziken', 0.0)
@@ -46,20 +46,20 @@ Faint Totals
 
 Damage Dealt (approx %)
     p1:BM: 259
-    p2:Greninja: 186
-    p2:Rayquaza: 153
     p1:Dark dragoon: 125
-    p2:Blaziken: 48
-    p2:Ditto: 21
+    p2:Greninja: 122
+    p2:Rayquaza: 76
+    p2:Blaziken: 23
+    p2:Ditto: 16
 
 Damage Taken (approx %)
-    p1:Cinco de mayo: 201
-    p1:Dark dragoon: 132
+    p1:Dark dragoon: 105
+    p1:Cinco de mayo: 100
     p2:Blaziken: 100
     p2:Ditto: 100
     p2:Greninja: 100
     p2:Rayquaza: 90
-    p1:BM: 69
+    p1:BM: 27
 
 Faints
   p1:Dark dragoon was fainted by p2:Greninja

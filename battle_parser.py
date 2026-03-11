@@ -24,11 +24,20 @@ def parse_hp_percent(hp_text):
     if '/' not in hp_text:
         return None
 
+    current, total = hp_text.split('/')
+    current = current[:-1]
+    current = float(current)
+    total = float(total)
+
+    if total != 100:
+        factor = total / 100
+        total = total / factor
+        current = current / factor
+
+        total = round(total, 2)
+        current = round(current, 2)
+
     try:
-        current, total = hp_text.split('/')
-        current = current[:-1]
-        current = float(current)
-        total = float(total)
         if total == 0:
             return None
         return current

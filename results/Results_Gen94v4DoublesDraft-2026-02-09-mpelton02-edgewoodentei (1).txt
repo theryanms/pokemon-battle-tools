@@ -9,8 +9,8 @@ Winner: MPelton02
 Total Turns: 5
 
 Pokemon Brought:
-  ('p1:Butter', 123.0)
-  ('p1:Cinco de mayo', 201.0)
+  ('p1:Butter', 59.42)
+  ('p1:Cinco de mayo', 100.0)
   ('p1:Legolas', 0.0)
   ('p1:Unk', 0.0)
   ('p2:Ditto', 0.0)
@@ -47,23 +47,23 @@ Faint Totals
     p2:Rayquaza: 1
 
 Damage Dealt (approx %)
-    p2:Rayquaza: 172
-    p2:Greninja: 142
+    p2:Rayquaza: 112
     p1:Legolas: 100
     p1:Unk: 100
-    p2:Ditto: 93
     p1:Cinco de mayo: 80
+    p2:Greninja: 76
     p1:Butter: 63
-    p2:Mew: 30
+    p2:Ditto: 47
+    p2:Mew: 14
 
 Damage Taken (approx %)
-    p1:Unk: 195
-    p1:Legolas: 175
+    p1:Legolas: 100
+    p1:Unk: 100
     p2:Ditto: 100
     p2:Greninja: 100
     p2:Mew: 100
     p2:Rayquaza: 80
-    p1:Butter: 30
+    p1:Butter: 14
 
 Faints
   p2:Greninja was fainted by p1:Legolas

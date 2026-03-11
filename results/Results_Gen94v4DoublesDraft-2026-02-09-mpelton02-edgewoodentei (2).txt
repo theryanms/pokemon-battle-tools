@@ -10,8 +10,8 @@ Total Turns: 5
 
 Pokemon Brought:
   ('p1:BM', 0.0)
-  ('p1:Cinco de mayo', 168.0)
-  ('p1:Dark dragoon', 125.0)
+  ('p1:Cinco de mayo', 83.58)
+  ('p1:Dark dragoon', 100.0)
   ('p2:Blaziken', 0.0)
   ('p2:Deoxys', 0.0)
   ('p2:Ditto', 0.0)
@@ -41,11 +41,11 @@ Faint Totals
 
 Damage Dealt (approx %)
     p1:Cinco de mayo: 268
-    p2:Ditto: 247
     p1:Dark dragoon: 132
+    p2:Ditto: 100
 
 Damage Taken (approx %)
-    p1:BM: 247
+    p1:BM: 100
     p2:Blaziken: 100
     p2:Deoxys: 100
     p2:Ditto: 100
