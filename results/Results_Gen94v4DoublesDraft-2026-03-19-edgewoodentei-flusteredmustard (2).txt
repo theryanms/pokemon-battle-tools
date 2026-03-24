@@ -1,0 +1,59 @@
+Game Type: doubles
+Tier: [Gen 9] 4v4 Doubles Draft
+Players:
+  p1: EdgewoodEntei
+  p2: flusteredmustard
+
+Winner: flusteredmustard
+Scoreline: 
+
+Match Wins:
+
+Total Turns: 5
+
+Pokemon Brought:
+  ('p1:BreakBricksWetNips', 0.0)
+  ('p1:Female Larry Bird', 0.0)
+  ('p1:Nightman', 0.0)
+  ('p1:Pepe Silvia', 0.0)
+  ('p2:Ford EcoBoost', 49.14)
+  ('p2:Hitmontop', 98.73)
+  ('p2:Macigarp', 96.14)
+  ('p2:Roaring Moon', 100.0)
+
+Pokemon Terastallized:
+  p1:Female Larry Bird: Ghost
+
+KO Totals
+    p2:Macigarp (Kyogre): 3
+    p2:Ford EcoBoost (Kyurem-White): 1
+
+Faint Totals
+    p1:BreakBricksWetNips (Deoxys-Speed): 1
+    p1:Female Larry Bird (Smeargle): 1
+    p1:Nightman (Darkrai): 1
+    p1:Pepe Silvia (Ditto): 1
+
+Damage Dealt (approx %)
+    p2:Macigarp (Kyogre): 163
+    p2:Ford EcoBoost (Kyurem-White): 132
+    p2:Roaring Moon (Roaring Moon): 99
+    p1:Nightman (Darkrai): 31
+    p1:Pepe Silvia (Ditto): 18
+    p2:Hitmontop (Hitmontop): 13
+    p1:Female Larry Bird (Smeargle): 5
+
+Damage Taken (approx %)
+    p1:Nightman (Darkrai): 107
+    p1:BreakBricksWetNips (Deoxys-Speed): 100
+    p1:Female Larry Bird (Smeargle): 100
+    p1:Pepe Silvia (Ditto): 100
+    p2:Ford EcoBoost (Kyurem-White): 50
+    p2:Macigarp (Kyogre): 3
+    p2:Hitmontop (Hitmontop): 1
+
+Faints
+  p1:Female Larry Bird (Smeargle) was fainted by p2:Macigarp (Kyogre)
+  p1:BreakBricksWetNips (Deoxys-Speed) was fainted by p2:Macigarp (Kyogre)
+  p1:Pepe Silvia (Ditto) was fainted by p2:Macigarp (Kyogre)
+  p1:Nightman (Darkrai) was fainted by p2:Ford EcoBoost (Kyurem-White)

@@ -1,0 +1,63 @@
+Game Type: doubles
+Tier: [Gen 9] 4v4 Doubles Draft
+Players:
+  p1: MPelton02
+  p2: fittyjason
+
+Winner: MPelton02
+Scoreline: 
+
+Match Wins:
+
+Total Turns: 8
+
+Pokemon Brought:
+  ('p1:Bash', 0.0)
+  ('p1:It’s magic', 34.74)
+  ('p1:Kingambit', 0.0)
+  ('p1:Klefki', 14.02)
+  ('p2:Dragapult', 0.0)
+  ('p2:Excadrill', 0.0)
+  ('p2:Koraidon', 0.0)
+  ('p2:Zacian', 0.0)
+
+Pokemon Terastallized:
+  p1:Bash: Ghost
+
+KO Totals
+    p1:Kingambit (Kingambit): 2
+    p1:It’s magic (Ho-Oh): 1
+    p2:Dragapult (Dragapult): 1
+    p2:Excadrill (Excadrill): 1
+
+Faint Totals
+    p1:Bash (Urshifu-Rapid-Strike): 1
+    p1:Kingambit (Kingambit): 1
+    p2:Dragapult (Dragapult): 1
+    p2:Excadrill (Excadrill): 1
+    p2:Zacian (Zacian-Crowned): 1
+
+Damage Dealt (approx %)
+    p2:Excadrill (Excadrill): 203
+    p1:Kingambit (Kingambit): 171
+    p2:Zacian (Zacian-Crowned): 155
+    p2:Dragapult (Dragapult): 80
+    p1:Bash (Urshifu-Rapid-Strike): 77
+    p1:It’s magic (Ho-Oh): 71
+
+Damage Taken (approx %)
+    p1:Bash (Urshifu-Rapid-Strike): 136
+    p1:Kingambit (Kingambit): 100
+    p2:Dragapult (Dragapult): 100
+    p2:Koraidon (Koraidon): 100
+    p2:Zacian (Zacian-Crowned): 100
+    p1:Klefki (Klefki): 85
+    p2:Excadrill (Excadrill): 71
+    p1:It’s magic (Ho-Oh): 65
+
+Faints
+  p1:Bash (Urshifu-Rapid-Strike) was fainted by p2:Dragapult (Dragapult)
+  p2:Dragapult (Dragapult) was fainted by p1:Kingambit (Kingambit)
+  p2:Zacian (Zacian-Crowned) was fainted by p1:Kingambit (Kingambit)
+  p1:Kingambit (Kingambit) was fainted by p2:Excadrill (Excadrill)
+  p2:Excadrill (Excadrill) was fainted by p1:It’s magic (Ho-Oh)

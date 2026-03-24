@@ -1,0 +1,59 @@
+Game Type: doubles
+Tier: [Gen 9] 4v4 Doubles Draft
+Players:
+  p1: EdgewoodEntei
+  p2: flusteredmustard
+
+Winner: flusteredmustard
+Scoreline: 
+
+Match Wins:
+
+Total Turns: 4
+
+Pokemon Brought:
+  ('p1:BreakBricksWetNips', 0.0)
+  ('p1:Female Larry Bird', 0.0)
+  ('p1:Nightman', 0.0)
+  ('p1:Pepe Silvia', 0.0)
+  ('p2:Ford EcoBoost', 84.91)
+  ('p2:Macigarp', 8.21)
+  ('p2:Roaring Moon', 98.89)
+  ('p2:Subaru Forester', 69.49)
+
+Pokemon Terastallized:
+
+KO Totals
+    p2:Macigarp (Kyogre): 3
+    p2:Subaru Forester (Scizor): 1
+
+Faint Totals
+    p1:BreakBricksWetNips (Deoxys-Speed): 1
+    p1:Female Larry Bird (Smeargle): 1
+    p1:Nightman (Darkrai): 1
+    p1:Pepe Silvia (Ditto): 1
+
+Damage Dealt (approx %)
+    p2:Macigarp (Kyogre): 248
+    p2:Subaru Forester (Scizor): 100
+    p1:Pepe Silvia (Ditto): 91
+    p2:Roaring Moon (Roaring Moon): 52
+    p1:BreakBricksWetNips (Deoxys-Speed): 30
+    p1:Nightman (Darkrai): 15
+    p1:Female Larry Bird (Smeargle): 1
+
+Damage Taken (approx %)
+    p1:BreakBricksWetNips (Deoxys-Speed): 100
+    p1:Female Larry Bird (Smeargle): 100
+    p1:Nightman (Darkrai): 100
+    p1:Pepe Silvia (Ditto): 100
+    p2:Macigarp (Kyogre): 91
+    p2:Subaru Forester (Scizor): 30
+    p2:Ford EcoBoost (Kyurem-White): 15
+    p2:Roaring Moon (Roaring Moon): 1
+
+Faints
+  p1:BreakBricksWetNips (Deoxys-Speed) was fainted by p2:Subaru Forester (Scizor)
+  p1:Pepe Silvia (Ditto) was fainted by p2:Macigarp (Kyogre)
+  p1:Female Larry Bird (Smeargle) was fainted by p2:Macigarp (Kyogre)
+  p1:Nightman (Darkrai) was fainted by p2:Macigarp (Kyogre)

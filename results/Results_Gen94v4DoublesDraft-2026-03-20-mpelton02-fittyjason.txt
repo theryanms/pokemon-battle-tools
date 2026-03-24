@@ -1,0 +1,63 @@
+Game Type: doubles
+Tier: [Gen 9] 4v4 Doubles Draft
+Players:
+  p1: MPelton02
+  p2: fittyjason
+
+Winner: MPelton02
+Scoreline: 
+
+Match Wins:
+
+Total Turns: 7
+
+Pokemon Brought:
+  ('p1:Bash', 97.79)
+  ('p1:Brothers', 0.0)
+  ('p1:It’s magic', 19.72)
+  ('p1:Klefki', 0.0)
+  ('p2:Excadrill', 0.0)
+  ('p2:Koraidon', 0.0)
+  ('p2:Umbreon', 0.0)
+  ('p2:Zacian', 0.0)
+
+Pokemon Terastallized:
+  p1:Bash: Ghost
+
+KO Totals
+    p1:Bash (Urshifu-Rapid-Strike): 3
+    p2:Koraidon (Koraidon): 2
+    p1:It’s magic (Ho-Oh): 1
+
+Faint Totals
+    p1:Brothers (Urshifu): 1
+    p1:Klefki (Klefki): 1
+    p2:Excadrill (Excadrill): 1
+    p2:Koraidon (Koraidon): 1
+    p2:Umbreon (Umbreon): 1
+    p2:Zacian (Zacian-Crowned): 1
+
+Damage Dealt (approx %)
+    p1:Bash (Urshifu-Rapid-Strike): 269
+    p2:Koraidon (Koraidon): 195
+    p1:It’s magic (Ho-Oh): 127
+    p2:Umbreon (Umbreon): 90
+    p2:Zacian (Zacian-Crowned): 54
+
+Damage Taken (approx %)
+    p2:Umbreon (Umbreon): 125
+    p1:Brothers (Urshifu): 100
+    p1:Klefki (Klefki): 100
+    p2:Excadrill (Excadrill): 100
+    p2:Zacian (Zacian-Crowned): 100
+    p1:It’s magic (Ho-Oh): 80
+    p2:Koraidon (Koraidon): 71
+    p1:Bash (Urshifu-Rapid-Strike): 59
+
+Faints
+  p2:Zacian (Zacian-Crowned) was fainted by p1:Bash (Urshifu-Rapid-Strike)
+  p1:Klefki (Klefki) was fainted by p2:Koraidon (Koraidon)
+  p1:Brothers (Urshifu) was fainted by p2:Koraidon (Koraidon)
+  p2:Koraidon (Koraidon) was fainted by p1:It’s magic (Ho-Oh)
+  p2:Excadrill (Excadrill) was fainted by p1:Bash (Urshifu-Rapid-Strike)
+  p2:Umbreon (Umbreon) was fainted by p1:Bash (Urshifu-Rapid-Strike)

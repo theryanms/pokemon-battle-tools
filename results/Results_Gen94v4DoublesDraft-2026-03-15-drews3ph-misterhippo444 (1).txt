@@ -1,0 +1,61 @@
+Game Type: doubles
+Tier: [Gen 9] 4v4 Doubles Draft
+Players:
+  p1: drews3ph
+  p2: Misterhippo444
+
+Winner: drews3ph
+Scoreline: 
+
+Match Wins:
+
+Total Turns: 4
+
+Pokemon Brought:
+  ('p1:Hoopa', 0.0)
+  ('p1:Palkia', 100.0)
+  ('p1:Pelipper', 53.89)
+  ('p1:Tornadus', 50.0)
+  ('p2:Chi-Yu', 0.0)
+  ('p2:Gholdengo', 0.0)
+  ('p2:Landorus', 0.0)
+  ('p2:Metagross', 0.0)
+
+Pokemon Terastallized:
+
+KO Totals
+    p1:Hoopa (Hoopa-Unbound): 2
+    p1:Pelipper (Pelipper): 2
+    p2:Metagross (Metagross): 1
+
+Faint Totals
+    p1:Hoopa (Hoopa-Unbound): 1
+    p2:Chi-Yu (Chi-Yu): 1
+    p2:Gholdengo (Gholdengo): 1
+    p2:Landorus (Landorus): 1
+    p2:Metagross (Metagross): 1
+
+Damage Dealt (approx %)
+    p1:Hoopa (Hoopa-Unbound): 200
+    p1:Palkia (Palkia): 123
+    p2:Gholdengo (Gholdengo): 109
+    p1:Pelipper (Pelipper): 84
+    p1:Tornadus (Tornadus): 39
+    p2:Metagross (Metagross): 36
+    p2:Chi-Yu (Chi-Yu): 29
+
+Damage Taken (approx %)
+    p1:Hoopa (Hoopa-Unbound): 100
+    p2:Chi-Yu (Chi-Yu): 100
+    p2:Gholdengo (Gholdengo): 100
+    p2:Landorus (Landorus): 100
+    p2:Metagross (Metagross): 100
+    p1:Tornadus (Tornadus): 74
+    p1:Pelipper (Pelipper): 46
+
+Faints
+  p2:Landorus (Landorus) was fainted by p1:Hoopa (Hoopa-Unbound)
+  p2:Gholdengo (Gholdengo) was fainted by p1:Hoopa (Hoopa-Unbound)
+  p1:Hoopa (Hoopa-Unbound) was fainted by p2:Metagross (Metagross)
+  p2:Chi-Yu (Chi-Yu) was fainted by p1:Pelipper (Pelipper)
+  p2:Metagross (Metagross) was fainted by p1:Pelipper (Pelipper)

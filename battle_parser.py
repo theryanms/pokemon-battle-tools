@@ -45,27 +45,63 @@ def parse_hp_percent(hp_text):
         return None
 
 
-#  Function to parse the game log
-def parse_game_log(file_path):
-    stats = {
+# Creates empty stat outline for each battle
+def create_empty_stats():
+    return {
         'game_type': '',
         'tier': '',
         'players': {},
         'winner': '',
+        'match_wins': {},  # player name -> number of game wins in the match
+        'scoreline': '',  # e.g. "3-1"
         'game_turns': 0,
         'faints': [],  # (victim, killer)
         'moves': [],  # (attacker, move)
         'status_effects': [],  # (target, status, source)
         'last_hp': {},
+        'nickname_to_species': {},  # "Zesty" -> "Sylveon"
         'ko_totals': {},
         'faint_totals': {},
         'total_damage': {},  # (total damage done by a Pokemon)
         'damage_taken': {},  # (total damage TAKEN by a pokemon)
         'field_turns': {},  # (total number of turns on field)
+        'active_turns': {},
         'terastallized': [],
-
         'active_slots': {'p1a': None, 'p1b': None, 'p2a': None, 'p2b': None},
     }
+
+
+def finalize_match_stats(match_stats):
+    players = match_stats['players']
+    wins = match_stats['match_wins']
+
+    if 'p1' in players:
+        p1_name = players['p1']
+        p1_wins = wins.get(p1_name, 0)
+    else:
+        p1_name = 'p1'
+        p1_wins = 0
+
+    if 'p2' in players:
+        p2_name = players['p2']
+        p2_wins = wins.get(p2_name, 0)
+    else:
+        p2_name = 'p2'
+        p2_wins = 0
+
+    match_stats['scoreline'] = f"{p1_wins}-{p2_wins}"
+
+    if p1_wins > p2_wins:
+        match_stats['winner'] = p1_name
+    elif p2_wins > p1_wins:
+        match_stats['winner'] = p2_name
+    else:
+        match_stats['winner'] = 'Tie'
+
+
+# Function to parse the game log
+def parse_game_log(file_path):
+    stats = create_empty_stats()
 
     # Track last Pokémon that damaged each target Pokémon
     last_damage_source = {}
@@ -105,6 +141,8 @@ def parse_game_log(file_path):
                 if len(parts) >= 5:
                     battle_name, hp_text = parts[2], parts[4]
                     pokemon = get_name_only(battle_name)
+                    species = parts[3].split(',')[0]
+                    stats['nickname_to_species'][pokemon] = species
                     hp_percent = parse_hp_percent(hp_text)
                     if hp_percent is not None:
                         stats['last_hp'][pokemon] = hp_percent
@@ -228,6 +266,51 @@ def parse_game_log(file_path):
     return stats
 
 
+def add_dict_totals(total_dict, game_dict):
+    for key, value in game_dict.items():
+        total_dict[key] = total_dict.get(key, 0) + value
+
+
+def combine_stats(match_stats, game_stats):
+    # keep basic metadata from first game
+    if not match_stats['game_type']:
+        match_stats['game_type'] = game_stats['game_type']
+    if not match_stats['tier']:
+        match_stats['tier'] = game_stats['tier']
+    if not match_stats['players']:
+        match_stats['players'] = game_stats['players']
+
+    # add game winner to match win totals
+    if game_stats['winner']:
+        winner = game_stats['winner']
+        match_stats['match_wins'][winner] = match_stats['match_wins'].get(winner, 0) + 1
+
+    # add simple totals
+    match_stats['game_turns'] += game_stats['game_turns']
+
+    # combine event logs
+    match_stats['faints'].extend(game_stats['faints'])
+    match_stats['moves'].extend(game_stats['moves'])
+    match_stats['status_effects'].extend(game_stats['status_effects'])
+
+    # combine nickname -> species mapping
+    for nickname, species in game_stats['nickname_to_species'].items():
+        match_stats['nickname_to_species'][nickname] = species
+
+    # combine numeric dictionaries
+    add_dict_totals(match_stats['ko_totals'], game_stats['ko_totals'])
+    add_dict_totals(match_stats['faint_totals'], game_stats['faint_totals'])
+    add_dict_totals(match_stats['total_damage'], game_stats['total_damage'])
+    add_dict_totals(match_stats['damage_taken'], game_stats['damage_taken'])
+
+
+def format_name(name, stats):
+    species = stats['nickname_to_species'].get(name)
+    if species:
+        return f"{name} ({species})"
+    return name
+
+
 def save_results(stats, output_folder, file_name):
     # Create the file path
     output_path = os.path.join(output_folder, file_name)
@@ -243,6 +326,12 @@ def save_results(stats, output_folder, file_name):
 
         f.write(f"\nWinner: {stats['winner']}\n")
 
+        f.write(f"Scoreline: {stats['scoreline']}\n")
+
+        f.write("\nMatch Wins:\n")
+        for player, wins in stats['match_wins'].items():
+            f.write(f"  {player}: {wins}\n")
+
         f.write(f"\nTotal Turns: {stats['game_turns']}\n")
 
         ### Pokemon Brought using LAST HP in stats. Will be a value if they appeared in match
@@ -254,62 +343,122 @@ def save_results(stats, output_folder, file_name):
         for pokemon, tera_type in stats['terastallized']:
             f.write(f"  {pokemon}: {tera_type}\n")
 
-        f.write(f"\nTurns on Field\n")
-        for pokemon, turns in sorted(stats['field_turns'].items(), key=lambda x: (-x[1], x[0].lower())):
-            f.write(f"    {pokemon}: {turns}\n")
+        ########## NEED TO FIX THIS BEFORE WE CAN OUTPUT IT
+
+        # f.write(f"\nTurns on Field\n")
+        # for pokemon, turns in sorted(stats['field_turns'].items(), key=lambda x: (-x[1], x[0].lower())):
+        #     f.write(f"    {pokemon}: {turns}\n")
+
+        ##########
 
         f.write(f"\nKO Totals\n")
         for pokemon, kos in sorted(stats['ko_totals'].items(), key=lambda x: (-x[1], x[0].lower())):
-            f.write(f"    {pokemon}: {kos}\n")
+            display_name = format_name(pokemon, stats)
+            f.write(f"    {display_name}: {kos}\n")
 
         f.write(f"\nFaint Totals\n")
         for pokemon, faints in sorted(stats['faint_totals'].items(), key=lambda x: (-x[1], x[0].lower())):
-            f.write(f"    {pokemon}: {faints}\n")
+            display_name = format_name(pokemon, stats)
+            f.write(f"    {display_name}: {faints}\n")
 
         f.write(f"\nDamage Dealt (approx %)\n")
         for pokemon, damage in sorted(stats['total_damage'].items(), key=lambda x: (-x[1], x[0].lower())):
-            f.write(f"    {pokemon}: {int(damage)}\n")
+            display_name = format_name(pokemon, stats)
+            f.write(f"    {display_name}: {int(damage)}\n")
 
         f.write(f"\nDamage Taken (approx %)\n")
         for pokemon, damage in sorted(stats['damage_taken'].items(), key=lambda x: (-x[1], x[0].lower())):
-            f.write(f"    {pokemon}: {int(damage)}\n")
+            display_name = format_name(pokemon, stats)
+            f.write(f"    {display_name}: {int(damage)}\n")
 
         ### DAMAGE HEALED?!?!?!
 
         # Write faints with the attacker who caused it
         f.write("\nFaints\n")
         for fainted_pokemon, attacker in stats['faints']:
-            f.write(f"  {fainted_pokemon} was fainted by {attacker}\n")
+            display_name_fainted = format_name(fainted_pokemon, stats)
+            display_name_attacker = format_name(attacker, stats)
+            f.write(f"  {display_name_fainted} was fainted by {display_name_attacker}\n")
 
         f.close()
 
     print(f"Results printed to {output_path}")
 
 
+def clean_name(name):
+    # Lowercase, remove spaces, keep it simple
+    return name.lower().replace(" ", "")
+
+
+def get_match_key(players):
+    """
+    Creates one key per matchup, regardless of p1/p2 order.
+    Example:
+    {'p1': 'Ryan', 'p2': 'Alex'} -> ('alex', 'ryan')
+    """
+    if 'p1' not in players or 'p2' not in players:
+        return 'unknown', 'unknown'
+
+    p1 = clean_name(players['p1'])
+    p2 = clean_name(players['p2'])
+
+    return tuple(sorted([p1, p2]))
+
+
 # Function to process all .html files in the folder
-def process_all_logs(input_folder, output_folder):
+def process_all_logs(input_folder, output_folder, save_individual_games=True, save_match_total=True):
+    all_match_stats = {}     # match_key -> cumulative stats
+    all_match_players = {}   # match_key -> players dict from one of the games
+
+    html_files = []
     for file_name in os.listdir(input_folder):
         if file_name.endswith(".html"):
-            file_path = os.path.join(input_folder, file_name)
-            print(f"Processing {file_name}...")
+            html_files.append(file_name)
 
-            game_stats = set()
+    html_files.sort()
 
-            # Parse the game log
-            game_stats = parse_game_log(file_path)
+    for file_name in html_files:
+        file_path = os.path.join(input_folder, file_name)
+        print(f"Processing {file_name}...")
 
-            # Create a unique results file name based on the input file name
+        game_stats = parse_game_log(file_path)
+
+        # Save each individual game if option is on
+        if save_individual_games:
             result_file_name = f"Results_{file_name.replace('.html', '')}.txt"
-
-            ######
-            # SPLIT THE FILE NAME TO MAKE IT SHORTER / JUST USERS NAMES ++
-            ######
-
-            # Save the results
             save_results(game_stats, output_folder, result_file_name)
+
+        # Figure out which match this game belongs to
+        match_key = get_match_key(game_stats['players'])
+
+        # Create cumulative stats for this match if it doesn't exist yet
+        if match_key not in all_match_stats:
+            all_match_stats[match_key] = create_empty_stats()
+            all_match_players[match_key] = game_stats['players']
+
+        # Combine this game into that specific match only
+        combine_stats(all_match_stats[match_key], game_stats)
+
+    # Save one cumulative file per match
+    if save_match_total:
+        for match_key, match_stats in all_match_stats.items():
+            players = all_match_players[match_key]
+
+            if 'p1' in players and 'p2' in players:
+                p1_name = clean_name(players['p1'])
+                p2_name = clean_name(players['p2'])
+                match_file_name = f"Match_Results_{p1_name}_vs_{p2_name}.txt"
+            else:
+                match_file_name = "Match_Results.txt"
+
+            save_results(match_stats, output_folder, match_file_name)
 
 
 ########## CHANGE BELOW TO YOUR OWN INPUT/OUTPUT FOLDERS
 input_folder = "C:/Users/ryanm/OneDrive/Desktop/PokeStats"
 output_folder = "D:/Documents/GitHub/dev/pokemon-battle-tools/results"
+
+save_individual_games = True
+save_match_total = True
+
 process_all_logs(input_folder, output_folder)

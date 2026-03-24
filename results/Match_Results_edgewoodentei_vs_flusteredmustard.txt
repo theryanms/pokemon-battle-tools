@@ -1,0 +1,68 @@
+Game Type: doubles
+Tier: [Gen 9] 4v4 Doubles Draft
+Players:
+  p1: EdgewoodEntei
+  p2: flusteredmustard
+
+Winner: 
+Scoreline: 
+
+Match Wins:
+  flusteredmustard: 3
+
+Total Turns: 12
+
+Pokemon Brought:
+
+Pokemon Terastallized:
+
+KO Totals
+    p2:Macigarp (Kyogre): 9
+    p2:Ford EcoBoost (Kyurem-White): 1
+    p2:Roaring Moon (Roaring Moon): 1
+    p2:Subaru Forester (Scizor): 1
+
+Faint Totals
+    p1:BreakBricksWetNips (Deoxys-Speed): 3
+    p1:Nightman (Darkrai): 3
+    p1:Pepe Silvia (Ditto): 3
+    p1:Female Larry Bird (Smeargle): 2
+    p1:Bird Law Lawyer (Greninja): 1
+
+Damage Dealt (approx %)
+    p2:Macigarp (Kyogre): 651
+    p2:Roaring Moon (Roaring Moon): 297
+    p2:Ford EcoBoost (Kyurem-White): 132
+    p1:Pepe Silvia (Ditto): 110
+    p1:Nightman (Darkrai): 106
+    p2:Subaru Forester (Scizor): 100
+    p1:Bird Law Lawyer (Greninja): 78
+    p1:BreakBricksWetNips (Deoxys-Speed): 30
+    p2:Hitmontop (Hitmontop): 27
+    p1:Female Larry Bird (Smeargle): 6
+
+Damage Taken (approx %)
+    p1:Nightman (Darkrai): 307
+    p1:BreakBricksWetNips (Deoxys-Speed): 300
+    p1:Pepe Silvia (Ditto): 300
+    p1:Female Larry Bird (Smeargle): 200
+    p2:Macigarp (Kyogre): 124
+    p1:Bird Law Lawyer (Greninja): 100
+    p2:Ford EcoBoost (Kyurem-White): 65
+    p2:Roaring Moon (Roaring Moon): 61
+    p2:Hitmontop (Hitmontop): 50
+    p2:Subaru Forester (Scizor): 30
+
+Faints
+  p1:BreakBricksWetNips (Deoxys-Speed) was fainted by p2:Roaring Moon (Roaring Moon)
+  p1:Pepe Silvia (Ditto) was fainted by p2:Macigarp (Kyogre)
+  p1:Bird Law Lawyer (Greninja) was fainted by p2:Macigarp (Kyogre)
+  p1:Nightman (Darkrai) was fainted by p2:Macigarp (Kyogre)
+  p1:Female Larry Bird (Smeargle) was fainted by p2:Macigarp (Kyogre)
+  p1:BreakBricksWetNips (Deoxys-Speed) was fainted by p2:Macigarp (Kyogre)
+  p1:Pepe Silvia (Ditto) was fainted by p2:Macigarp (Kyogre)
+  p1:Nightman (Darkrai) was fainted by p2:Ford EcoBoost (Kyurem-White)
+  p1:BreakBricksWetNips (Deoxys-Speed) was fainted by p2:Subaru Forester (Scizor)
+  p1:Pepe Silvia (Ditto) was fainted by p2:Macigarp (Kyogre)
+  p1:Female Larry Bird (Smeargle) was fainted by p2:Macigarp (Kyogre)
+  p1:Nightman (Darkrai) was fainted by p2:Macigarp (Kyogre)

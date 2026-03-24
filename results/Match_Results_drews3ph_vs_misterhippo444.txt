@@ -1,0 +1,75 @@
+Game Type: doubles
+Tier: [Gen 9] 4v4 Doubles Draft
+Players:
+  p1: drews3ph
+  p2: Misterhippo444
+
+Winner: 
+Scoreline: 
+
+Match Wins:
+  drews3ph: 3
+
+Total Turns: 12
+
+Pokemon Brought:
+
+Pokemon Terastallized:
+
+KO Totals
+    p1:Hoopa (Hoopa-Unbound): 7
+    p1:Pelipper (Pelipper): 3
+    p1:Palkia (Palkia): 1
+    p1:Tornadus (Tornadus): 1
+    p2:Iron Valiant (Iron Valiant): 1
+    p2:Metagross (Metagross): 1
+    p2:Tyranitar (Tyranitar): 1
+
+Faint Totals
+    p2:Gholdengo (Gholdengo): 3
+    p2:Metagross (Metagross): 3
+    p1:Hoopa (Hoopa-Unbound): 2
+    p2:Iron Valiant (Iron Valiant): 2
+    p2:Tyranitar (Tyranitar): 2
+    p1:Pelipper (Pelipper): 1
+    p2:Chi-Yu (Chi-Yu): 1
+    p2:Landorus (Landorus): 1
+
+Damage Dealt (approx %)
+    p1:Hoopa (Hoopa-Unbound): 546
+    p1:Palkia (Palkia): 416
+    p1:Pelipper (Pelipper): 178
+    p1:Tornadus (Tornadus): 145
+    p2:Gholdengo (Gholdengo): 109
+    p2:Iron Valiant (Iron Valiant): 94
+    p2:Tyranitar (Tyranitar): 66
+    p2:Metagross (Metagross): 48
+    p2:Chi-Yu (Chi-Yu): 29
+
+Damage Taken (approx %)
+    p2:Gholdengo (Gholdengo): 300
+    p2:Metagross (Metagross): 300
+    p2:Tyranitar (Tyranitar): 206
+    p2:Iron Valiant (Iron Valiant): 200
+    p1:Hoopa (Hoopa-Unbound): 194
+    p1:Pelipper (Pelipper): 158
+    p2:Chi-Yu (Chi-Yu): 100
+    p2:Landorus (Landorus): 100
+    p1:Tornadus (Tornadus): 74
+
+Faints
+  p2:Landorus (Landorus) was fainted by p1:Hoopa (Hoopa-Unbound)
+  p2:Gholdengo (Gholdengo) was fainted by p1:Hoopa (Hoopa-Unbound)
+  p1:Hoopa (Hoopa-Unbound) was fainted by p2:Metagross (Metagross)
+  p2:Chi-Yu (Chi-Yu) was fainted by p1:Pelipper (Pelipper)
+  p2:Metagross (Metagross) was fainted by p1:Pelipper (Pelipper)
+  p2:Tyranitar (Tyranitar) was fainted by p1:Hoopa (Hoopa-Unbound)
+  p2:Gholdengo (Gholdengo) was fainted by p1:Hoopa (Hoopa-Unbound)
+  p1:Hoopa (Hoopa-Unbound) was fainted by p2:Iron Valiant (Iron Valiant)
+  p2:Iron Valiant (Iron Valiant) was fainted by p1:Tornadus (Tornadus)
+  p2:Metagross (Metagross) was fainted by p1:Pelipper (Pelipper)
+  p1:Pelipper (Pelipper) was fainted by p2:Tyranitar (Tyranitar)
+  p2:Tyranitar (Tyranitar) was fainted by p1:Palkia (Palkia)
+  p2:Iron Valiant (Iron Valiant) was fainted by p1:Hoopa (Hoopa-Unbound)
+  p2:Gholdengo (Gholdengo) was fainted by p1:Hoopa (Hoopa-Unbound)
+  p2:Metagross (Metagross) was fainted by p1:Hoopa (Hoopa-Unbound)

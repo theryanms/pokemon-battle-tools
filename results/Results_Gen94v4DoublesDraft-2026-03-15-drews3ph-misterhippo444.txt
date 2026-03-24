@@ -1,0 +1,54 @@
+Game Type: doubles
+Tier: [Gen 9] 4v4 Doubles Draft
+Players:
+  p1: drews3ph
+  p2: Misterhippo444
+
+Winner: drews3ph
+Scoreline: 
+
+Match Wins:
+
+Total Turns: 4
+
+Pokemon Brought:
+  ('p1:Hoopa', 88.39)
+  ('p1:Palkia', 81.82)
+  ('p1:Pelipper', 0.0)
+  ('p2:Gholdengo', 0.0)
+  ('p2:Iron Valiant', 0.0)
+  ('p2:Metagross', 0.0)
+  ('p2:Tyranitar', 0.0)
+
+Pokemon Terastallized:
+
+KO Totals
+    p1:Hoopa (Hoopa-Unbound): 3
+    p1:Palkia (Palkia): 1
+    p2:Tyranitar (Tyranitar): 1
+
+Faint Totals
+    p1:Pelipper (Pelipper): 1
+    p2:Gholdengo (Gholdengo): 1
+    p2:Iron Valiant (Iron Valiant): 1
+    p2:Metagross (Metagross): 1
+    p2:Tyranitar (Tyranitar): 1
+
+Damage Dealt (approx %)
+    p1:Palkia (Palkia): 293
+    p1:Hoopa (Hoopa-Unbound): 146
+    p2:Tyranitar (Tyranitar): 66
+
+Damage Taken (approx %)
+    p2:Tyranitar (Tyranitar): 106
+    p1:Pelipper (Pelipper): 100
+    p2:Gholdengo (Gholdengo): 100
+    p2:Iron Valiant (Iron Valiant): 100
+    p2:Metagross (Metagross): 100
+
+Faints
+  p1:Pelipper (Pelipper) was fainted by p2:Tyranitar (Tyranitar)
+  p2:Tyranitar (Tyranitar) was fainted by p1:Palkia (Palkia)
+  p2:Iron Valiant (Iron Valiant) was fainted by p1:Hoopa (Hoopa-Unbound)
+  p2:Gholdengo (Gholdengo) was fainted by p1:Hoopa (Hoopa-Unbound)
+  p2:Metagross (Metagross) was fainted by p1:Hoopa (Hoopa-Unbound)
